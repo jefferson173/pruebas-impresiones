@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impresión de Tickets</title>
+</head>
+<body>
+    <h1>Enviar solicitud de impresión</h1>
+    <textarea id="message" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
+    <br>
+    <button onclick="sendMessage()">Imprimir</button>
+
+    <script>
+        async function sendMessage() {
+            const message = document.getElementById('message').value;
+            try {
+                const response = await fetch('http://localhost:3000/print', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message }),
+                });
+                if (response.ok) {
+                    alert('Solicitud de impresión enviada');
+                } else {
+                    alert('Error al enviar la solicitud de impresión');
+                }
+            } catch (error) {
+                console.error('Error al enviar la solicitud:', error);
+                alert('Error al enviar la solicitud');
+            }
+        }
+    </script>
+</body>
+</html>

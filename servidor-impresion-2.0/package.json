@@ -1,0 +1,19 @@
+{
+  "name": "servidor-impresion-2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "net": "^1.0.2",
+    "node-thermal-printer": "^4.4.2",
+    "remote-events": "^1.1.4"
+  }
+}
